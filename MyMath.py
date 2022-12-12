@@ -5,7 +5,6 @@
     for i in l:
         total = total + i
     return total'''
-
 def add(*number):
     from functools import reduce
     return reduce(lambda a,b:a+b, [*number])
@@ -17,7 +16,6 @@ def add(*number):
     for i in l:
         diff = diff - i
     return diff'''
-
 def difference(*number):
     from functools import reduce
     return reduce(lambda a,b:a-b, [*number])
@@ -29,7 +27,6 @@ def difference(*number):
     for i in l:
         mul = mul * i
     return mul'''
-
 def multiply(*number):
     from functools import reduce
     return reduce(lambda a,b:a*b, [*number])
@@ -73,7 +70,6 @@ def exp(x):
         return 1
     else:
         return number*factorial(number-1)'''
-
 def factorial(number):
     if number < 0:
         raise ValueError("Sorry, factorial does not exist for negative numbers")
@@ -82,8 +78,6 @@ def factorial(number):
     else:
         from functools import reduce
         return reduce(lambda a,b:a*b, range(2,number+1))
-
-print(factorial(5))
 
 def hcf(*number):
     l = [*number]
@@ -183,4 +177,3 @@ def nCr(n,r):
         return int(factorial(n)/((factorial(n-r))*(factorial(r))))
     else:
         raise ValueError('r cannot be less than n')
-
