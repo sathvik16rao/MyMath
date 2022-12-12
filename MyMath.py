@@ -34,10 +34,6 @@ def multiply(*number):
     from functools import reduce
     return reduce(lambda a,b:a*b, [*number])
 
-print(add(1,2,3,4,5))
-print(difference(1,2,3,4,5))
-print(multiply(1,2,3,4,5))
-
 def division(numerator,denominator):
     if denominator == 0:
         raise ValueError('Divivsion with zero is not possible')
@@ -70,13 +66,24 @@ def exp(x):
         val += temp
     return val
 
+'''def factorial(number):
+    if number < 0:
+        raise ValueError("Sorry, factorial does not exist for negative numbers")
+    elif number == 0:
+        return 1
+    else:
+        return number*factorial(number-1)'''
+
 def factorial(number):
     if number < 0:
         raise ValueError("Sorry, factorial does not exist for negative numbers")
     elif number == 0:
         return 1
     else:
-        return number*factorial(number-1)
+        from functools import reduce
+        return reduce(lambda a,b:a*b, range(2,number+1))
+
+print(factorial(5))
 
 def hcf(*number):
     l = [*number]
