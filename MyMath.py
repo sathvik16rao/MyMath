@@ -52,7 +52,7 @@ def sqroot(number):
 def nthroot(number, n):
     return number**(1/n)
 
-pi = 3.1415926535897932384626433832792
+pi = 3.1415926535897932384626433832795
 
 e = 2.71828182845904523536028747135266
 
@@ -161,11 +161,6 @@ def sech(x):
 def coth(x):
     return cosh(x)/sinh(x)
 
-'''def ln(x):                  #Improve effeciency
-    n=100000000
-    val = n * ((nthroot(x,n))-1)
-    return round(val,8)'''
-
 def nPr(n,r):
     if n>=r:
         return int(factorial(n)/factorial(n-r))
@@ -178,21 +173,19 @@ def nCr(n,r):
     else:
         raise ValueError('r cannot be less than n')
 
-def agmtrial(a,b):
+def agm(a,b):
     tolerance = 1e-14
     an, bn = a, b
     while abs(an - bn) > tolerance:
         an, bn = (an + bn) / 2, sqroot(an * bn)
     return an
 
-print(agmtrial(1,2))
-
-from math import sqrt
-
-def agm(a0, g0, tolerance=1e-10):
-    an, gn = (a0 + g0) / 2.0, sqrt(a0 * g0)
-    while abs(an - gn) > tolerance:
-        an, gn = (an + gn) / 2.0, sqrt(an * gn)
-    return an
-
-print(agm(1, 2))
+def ln(x):
+    m = 35
+    s = x*(2**m)
+    val = (pi/(2*(agm(1,4/s))))-(m*0.6931471805599453)
+    return val
+'''def ln(x):                  #Improve effeciency
+    n=100000000
+    val = n * ((nthroot(x,n))-1)
+    return round(val,8)'''
