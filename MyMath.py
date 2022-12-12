@@ -161,10 +161,10 @@ def sech(x):
 def coth(x):
     return cosh(x)/sinh(x)
 
-def ln(x):                  #Improve effeciency
+'''def ln(x):                  #Improve effeciency
     n=100000000
     val = n * ((nthroot(x,n))-1)
-    return round(val,8)
+    return round(val,8)'''
 
 def nPr(n,r):
     if n>=r:
@@ -177,3 +177,22 @@ def nCr(n,r):
         return int(factorial(n)/((factorial(n-r))*(factorial(r))))
     else:
         raise ValueError('r cannot be less than n')
+
+def agmtrial(a,b):
+    tolerance = 1e-14
+    an, bn = a, b
+    while abs(an - bn) > tolerance:
+        an, bn = (an + bn) / 2, sqroot(an * bn)
+    return an
+
+print(agmtrial(1,2))
+
+from math import sqrt
+
+def agm(a0, g0, tolerance=1e-10):
+    an, gn = (a0 + g0) / 2.0, sqrt(a0 * g0)
+    while abs(an - gn) > tolerance:
+        an, gn = (an + gn) / 2.0, sqrt(an * gn)
+    return an
+
+print(agm(1, 2))
