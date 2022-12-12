@@ -189,3 +189,14 @@ def ln(x):
     n=100000000
     val = n * ((nthroot(x,n))-1)
     return round(val,8)'''
+
+def log(x):
+    return ln(x)/ln(10)
+
+def logn(x,base):
+    return ln(x)/ln(base)
+
+def antilog(x, base):
+    return base**x
+
+print(antilog(13,12))
