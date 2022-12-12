@@ -202,14 +202,44 @@ def antilog(x, base):
     return base**x
 
 def sin_inv(x):
+    if x>=-1 or x<=1:
+        val = 0
+        for n in range(51):
+            odd = (2*n)+1
+            even = 2*n
+            temp = ((factorial(even))/((4**n)*((factorial(n))**2)*odd))*(x**odd)
+            val += temp
+        return val
+    else:
+        raise ValueError('x cannot be outside the range [-1,1]')
+
+def cos_inv(x):
+    return (pi/2) - sin_inv(x)
+
+def tan_inv(x):
     val = 0
-    for n in range(21):
+    for n in range(51):
         odd = (2*n)+1
-        even = 2*n
-        temp = ((factorial(even))/((4**n)*((factorial(n))**2)*odd))*(x**odd)
+        temp = (((-1)**n)/odd)*(x**odd)
         val += temp
     return val
 
-print(sin_inv(0.5))
-import math
-print(math.asin(0.5))
+def cosec_inv(x):
+    if x>=1 or x<=-1:
+        return sin_inv(1/x)
+    else:
+        raise ValueError('x cannot be in the range (-1,1)')
+
+def sec_inv(x):
+    if x>=1 or x<=-1:
+        return cos_inv(1/x)
+    else:
+        raise ValueError('x cannot be in the range (-1,1)')
+
+def cot_inv(x):
+    if x>0:
+        return tan_inv(1/x)
+    elif x<0:
+        return pi + tan_inv(x)
+    else:
+        raise ValueError('cot_inv of zero is undefined')
