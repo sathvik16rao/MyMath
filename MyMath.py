@@ -76,8 +76,10 @@ def factorial(number):
     elif number == 0:
         return 1
     else:
-        from functools import reduce
-        return reduce(lambda a,b:a*b, range(2,number+1))
+        val = 1
+        for i in range(2,number+1):
+            val = val * i
+        return val
 
 def hcf(*number):
     l = [*number]
@@ -199,4 +201,15 @@ def logn(x,base):
 def antilog(x, base):
     return base**x
 
-print(antilog(13,12))
+def sin_inv(x):
+    val = 0
+    for n in range(21):
+        odd = (2*n)+1
+        even = 2*n
+        temp = ((factorial(even))/((4**n)*((factorial(n))**2)*odd))*(x**odd)
+        val += temp
+    return val
+
+print(sin_inv(0.5))
+import math
+print(math.asin(0.5))
