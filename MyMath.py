@@ -242,4 +242,4 @@ def cot_inv(x):
     elif x<0:
         return pi + tan_inv(x)
     else:
-        raise ValueError('cot_inv of zero is undefined')
+        return pi/2
