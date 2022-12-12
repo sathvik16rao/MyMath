@@ -1,26 +1,42 @@
-def add(*number):
+'''def add(*number):
     l = [*number]
     total = l[0]
     l.pop(0)
     for i in l:
         total = total + i
-    return total
+    return total'''
 
-def difference(*number):
+def add(*number):
+    from functools import reduce
+    return reduce(lambda a,b:a+b, [*number])
+
+'''def difference(*number):
     l = [*number]
     diff = l[0]
     l.pop(0)
     for i in l:
         diff = diff - i
-    return diff
+    return diff'''
 
-def multiply(*number):
+def difference(*number):
+    from functools import reduce
+    return reduce(lambda a,b:a-b, [*number])
+
+'''def multiply(*number):
     l = [*number]
     mul = l[0]
     l.pop(0)
     for i in l:
         mul = mul * i
-    return mul
+    return mul'''
+
+def multiply(*number):
+    from functools import reduce
+    return reduce(lambda a,b:a*b, [*number])
+
+print(add(1,2,3,4,5))
+print(difference(1,2,3,4,5))
+print(multiply(1,2,3,4,5))
 
 def division(numerator,denominator):
     if denominator == 0:
