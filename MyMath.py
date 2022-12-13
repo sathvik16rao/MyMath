@@ -261,3 +261,47 @@ def rani(a,b):
     import random
     return random.randint(a,b)
 
+def sinh_inv(x):
+    temp = sqroot((x**2)+1)
+    val = ln(x + temp)
+    return val
+
+def cosh_inv(x):
+    if x>=1:
+        temp = sqroot((x**2)-1)
+        val = ln(x + temp)
+        return val
+    else:
+        raise ValueError('Domain of cosh_inv is [1,∞)')
+
+def tanh_inv(x):
+    if -1<x<1:
+        temp = (1+x)/(1-x)
+        val = (1/2)*ln(temp)
+        return val
+    else: 
+        raise ValueError('Domain of cosh_inv is (-1,1)')
+
+def cosech_inv(x):
+    if x!=0:
+        temp = sqroot((1/(x**2))+1)
+        val = ln((1/x)+temp)
+        return val
+    else:
+        raise ValueError('Domain of cosech_inv is R-{0}')
+
+def sech_inv(x):
+    if 0 < x <= 1:
+        temp = sqroot((1/(x**2))-1)
+        val = ln((1/x)+temp)
+        return val
+    else:
+        raise ValueError('Domain of sech_inv is (0,1]')
+
+def coth_inv(x):
+    if x<-1 or x>1:
+        temp = (x+1)/(x-1)
+        val = (1/2)*(ln(temp))
+        return val
+    else:
+        return ValueError('Domain od coth_inv is (-∞,-1)u(1,+∞)')
