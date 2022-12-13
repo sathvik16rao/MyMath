@@ -61,9 +61,6 @@ def abs(number):
     else:
         return number*-1
 
-print(abs(-3))
-print(abs(3))
-print(inv(3))
 pi = 3.1415926535897932384626433832795
 
 e = 2.71828182845904523536028747135266
@@ -255,4 +252,12 @@ def cot_inv(x):
         return pi + tan_inv(x)
     else:
         return pi/2
+
+def rand():
+    import random
+    return random.random()
+
+def rani(a,b):
+    import random
+    return random.randint(a,b)
 
