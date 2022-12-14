@@ -304,4 +304,5 @@ def coth_inv(x):
         val = (1/2)*(ln(temp))
         return val
     else:
-        return ValueError('Domain od coth_inv is (-∞,-1)u(1,+∞)')
+        return ValueError('Domain of coth_inv is (-∞,-1)u(1,+∞)')
+ 
