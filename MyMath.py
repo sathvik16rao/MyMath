@@ -257,7 +257,7 @@ def rand():
     import random
     return random.random()
 
-def rani(a,b):
+def ranint(a,b):
     import random
     return random.randint(a,b)
 
