@@ -306,19 +306,4 @@ def coth_inv(x):
     else:
         raise ValueError('Domain of coth_inv is (-∞,-1)u(1,+∞)')
 
-def APnth(a,d,n):
-    an = a + (n-1)*d
-    return an
-
-def APnot(a,d,l):
-    n = ((l - a)/d)+1
-    return n
-
-def APsum(a,d,n,*l):                    #Make effecient logic for which formulae to use
-    if len([a,d,n,*l]) == 3:
-        Sn = (n/2)*(2*a + (n-1)*d)
-    else:
-        Sn = (n/2)*(a+l)
-    return Sn
-
 h = 6.62606957e-34
