@@ -306,6 +306,23 @@ def coth_inv(x):
     else:
         raise ValueError('Domain of coth_inv is (-∞,-1)u(1,+∞)')
 
-h = 6.62606957e-34
-
-h_ = 1.0545717253362894e-34
+h = 6.62607015e-34                      #Planck constant
+h_ = 1.0545718176461565e-34             #Reduced Planck constant
+G = 6.67430e-11                         #Universal gravitational constant
+kappa = 2.076647442844e-43              #Einstein gravitational constant
+c = 299792458                           #Speed of light in vacuum
+mu0 = 1.25663706212e-6                  #Vacuum magnetic permeability
+Z0 = 376.730313668                      #Characteristic impedance of vacuum
+epsilon0 = 8.8541878128e-12             #Vacuum electric permittivity
+ke = 8.9875517923e9                     #Coulomb constant
+kB = 1.380649e23                        #Boltzmann constant
+sigma = 5.670374419e-8                  #Stefan–Boltzmann constant
+c1 = 3.741771852e-16                    #First radiation constant
+c1L = 1.1910429723971884140794892e-16   #First radiation constant for spectral radiance
+c2 = 1.438776877e-2                     #Second radiation constant
+b = 2.897771955e-3                      #Wien wavelength displacement law constant
+b_ = 5.878925757e10                     #Wien frequency displacement law constant
+bentropy = 3.002916077e-3               #Wien entropy displacement law constant
+eC = 1.602176634e-19                    #Elementary charge
+G0 = 7.748091729e-5                     #Conductance quantum
+RK = 25812.80745                        #Von Klitzing constant
