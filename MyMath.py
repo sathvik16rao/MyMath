@@ -320,3 +320,5 @@ def APsum(a,d,n,*l):                    #Make effecient logic for which formulae
     else:
         Sn = (n/2)*(a+l)
     return Sn
+
+h = 6.62606957e-34
