@@ -307,3 +307,5 @@ def coth_inv(x):
         raise ValueError('Domain of coth_inv is (-∞,-1)u(1,+∞)')
 
 h = 6.62606957e-34
+
+h_ = 1.0545717253362894e-34
