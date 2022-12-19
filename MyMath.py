@@ -338,6 +338,8 @@ M_alpha = 4.0015061777e-3               #alpha particle molar mass (kg/mol)
 a0 = 5.29177210903e-11                  #Bohr radius (in m)
 re = 2.8179403262e-15                   #classical electron radius (in m)
 lambda_c = 2.42631023867e-12            #Compton wavelength (in meter per cycle)
+m_e = 9.1093837015e-31                  #electron mass (in kg)
+M_e = 5.4857990888e-7                   #electron molar mass (kg mol)
 
 
 
