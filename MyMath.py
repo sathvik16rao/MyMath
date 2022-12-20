@@ -1,35 +1,35 @@
-'''def add(*number):
+def add(*number):
     l = [*number]
     total = l[0]
     l.pop(0)
     for i in l:
         total = total + i
-    return total'''
-def add(*number):
+    return total
+'''def add(*number):
     from functools import reduce
-    return reduce(lambda a,b:a+b, [*number])
+    return reduce(lambda a,b:a+b, [*number])'''
 
-'''def difference(*number):
+def difference(*number):
     l = [*number]
     diff = l[0]
     l.pop(0)
     for i in l:
         diff = diff - i
-    return diff'''
-def difference(*number):
+    return diff
+'''def difference(*number):
     from functools import reduce
-    return reduce(lambda a,b:a-b, [*number])
+    return reduce(lambda a,b:a-b, [*number])'''
 
-'''def multiply(*number):
+def multiply(*number):
     l = [*number]
     mul = l[0]
     l.pop(0)
     for i in l:
         mul = mul * i
-    return mul'''
-def multiply(*number):
+    return mul
+'''def multiply(*number):
     from functools import reduce
-    return reduce(lambda a,b:a*b, [*number])
+    return reduce(lambda a,b:a*b, [*number])'''
 
 def division(numerator,denominator):
     if denominator == 0:
@@ -72,13 +72,6 @@ def exp(x):
         val += temp
     return val
 
-'''def factorial(number):
-    if number < 0:
-        raise ValueError("Sorry, factorial does not exist for negative numbers")
-    elif number == 0:
-        return 1
-    else:
-        return number*factorial(number-1)'''
 def factorial(number):
     if number < 0:
         raise ValueError("Sorry, factorial does not exist for negative numbers")
@@ -141,24 +134,10 @@ def sec(x):
 def sinh(x):
     val = (exp(x) - exp(-x))/2
     return val
-'''def sinh(x):
-    val = 0
-    for n in range(51):
-        odd = (2*n)+1
-        temp = (x**odd)/factorial(odd)
-        val += temp
-    return val'''
 
 def cosh(x):
     val = (exp(x) + exp(-x))/2
     return val
-'''def cosh(x):
-    val = 0
-    for n in range(51):
-        even = (2*n)
-        temp = (x**even)/factorial(even)
-        val += temp
-    return val'''
 
 def tanh(x):
     return sinh(x)/cosh(x)
@@ -196,10 +175,6 @@ def ln(x):
     s = x*(2**m)
     val = (pi/(2*(agm(1,4/s))))-(m*0.6931471805599453)
     return val
-'''def ln(x):                  #Improve effeciency
-    n=100000000
-    val = n * ((nthroot(x,n))-1)
-    return round(val,8)'''
 
 def log(x):
     return ln(x)/ln(10)
