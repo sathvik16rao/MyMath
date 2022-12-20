@@ -340,19 +340,52 @@ re = 2.8179403262e-15                   #classical electron radius (in m)
 lambda_c = 2.42631023867e-12            #Compton wavelength (in meter per cycle)
 m_e = 9.1093837015e-31                  #electron mass (in kg)
 M_e = 5.4857990888e-7                   #electron molar mass (kg mol)
+g_d = 0.8574382338                      #deuteron g factor
+mu_g = 4.330735094e-27                  #deuteron magnetic moment (in J/T)
+m_d =  3.3435837724e-27                 #deuteron mass (in kg)
+m_d_u =  2.013553212745                 #deuteron mass (in u)
+M_d = 2.01355321205e-3                  #deuteron molar mass (in kg/mol)
+g_e = -2.00231930436256                 #electron g factor
+gamma_e = 1.76085963023e11              #electron gyromagnetic ratio (in /sT)
+mu_e = -9.2847647043e-24                #electron magnetic moment (in J/T)
+Fcc = 1.1663787e-5                      #Fermi coupling constant (in GeV^-2)
+alpha = 7.2973525693e-3                 #fine-structure constant
+E_h = 4.3597447222071e-18               #Hartree energy (in J)
+alpha_inv = 137.035999084               #inverse fine-structure constant
+g_mu = -2.0023318418                    #muon g factor 
+mu_mu = -4.49044830e-26                 #muon magnetic moment (in J/T)
+m_mu = 1.883531627e-28                  #muon mass (in kg)
+M_mu = 1.134289259e-4                   #muon molar mass (in kg/mol)
+g_n = -3.82608545                       #neutron g factor
+gamma_n = 1.83247171e8                  #neutron gyromagnetic ratio (in /sT)
+mu_n = -9.6623651e-27                   #neutron magnetic moment (in J/T)
+m_n = 1.67492749804e-27                 #neutron mass (in kg)
+M_n = 1.00866491560e-3                  #neutron molar mass (in kg/mol)
+g_p = 5.5856946893                      #proton g factor
+gamma_p = 2.6752218744e8                #proton gyromagnetic ratio (in /sT)
+mu_p = 1.41060679736e-26                #proton magnetic moment (in J/T)
+m_p = 1.67262192369e-27                 #proton mass (in kg)
+M_p = 1.00727646627e-3                  #proton molar mass (in kg/mol)
+qoc = 3.6369475516e-4                   #quantum of circulation (m^2/s)
+R_inf = 10973731.568160                 #Rydberg constant (in meter per cycle)
+m_tau = 3.16754e-27                     #tau mass (in kg)
+M_tau = 1.90754e-3                      #tau molar mass (in kg/mol)
+sigma_e = 6.6524587321e-29              #Thomson cross section (in m^2)
 
-
-
-
-kappa = 2.076647442844e-43              #Einstein gravitational constant
-ke = 8.9875517923e9                     #Coulomb constant
-kB = 1.380649e23                        #Boltzmann constant
+#Physico-chemical constants
+m_u = 1.66053906660e-27                 #atomic mass constant (in kg)
+N_A = 6.02214076e23                     #Avogadro constant (in mol^-1)
+k_B = 1.380649e-23                      #Boltzmann constant
+F = 96485.33212                         #Faraday constant
+R = 8.314462618                         #molar gas constant
 sigma = 5.670374419e-8                  #Stefan–Boltzmann constant
-c1 = 3.741771852e-16                    #First radiation constant
-c1L = 1.1910429723971884140794892e-16   #First radiation constant for spectral radiance
-c2 = 1.438776877e-2                     #Second radiation constant
 b = 2.897771955e-3                      #Wien wavelength displacement law constant
 b_ = 5.878925757e10                     #Wien frequency displacement law constant
 bentropy = 3.002916077e-3               #Wien entropy displacement law constant
+c1 = 3.741771852e-16                    #First radiation constant
+c1L = 1.1910429723971884140794892e-16   #First radiation constant for spectral radiance
+c2 = 1.438776877e-2                     #Second radiation constant
 
-
+#Other constants
+kappa = 2.076647442844e-43              #Einstein gravitational constant
+k_e = 8.9875517923e9                    #Coulomb constant
