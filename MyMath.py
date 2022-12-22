@@ -5,9 +5,6 @@ def add(*number):
     for i in l:
         total = total + i
     return total
-'''def add(*number):
-    from functools import reduce
-    return reduce(lambda a,b:a+b, [*number])'''
 
 def difference(*number):
     l = [*number]
@@ -16,9 +13,6 @@ def difference(*number):
     for i in l:
         diff = diff - i
     return diff
-'''def difference(*number):
-    from functools import reduce
-    return reduce(lambda a,b:a-b, [*number])'''
 
 def multiply(*number):
     l = [*number]
@@ -27,9 +21,6 @@ def multiply(*number):
     for i in l:
         mul = mul * i
     return mul
-'''def multiply(*number):
-    from functools import reduce
-    return reduce(lambda a,b:a*b, [*number])'''
 
 def division(numerator,denominator):
     if denominator == 0:
