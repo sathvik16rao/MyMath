@@ -12,7 +12,7 @@ button_text_list = ["C", "AC", "√", "+", "π", "sinθ", "cosθ", "tanθ",
                     "7", "8", "9", chr(247), "ln", "deg", "rad", "e",
                     "0", ".", "%", "=", "log₁₀", "(", ")", "x!"]
 button_bg1 = '#faba0a'
-button_bg2 = '#0eabcancel8c'
+button_bg2 = '#0eab8c'
 button_bg3 = '#98d8ce'
 rowvalue = 1
 columnvalue = 0
