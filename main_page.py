@@ -7,7 +7,7 @@ root.config(bg='#000000')
 root.geometry('450x335')
 root.resizable(FALSE,FALSE)
 
-entryField = Entry(root, font=('times new roman',20,'bold'), bg='#000000', fg='#F1DDCF', bd=5, relief=RIDGE, width = 31)
+entryField = Entry(root, font=('times new roman',20,'bold'), bg='#000000', fg='#F1DDCF', bd=5, relief=RIDGE, width = 31, insertbackground = 'white')
 entryField.grid(row=0,column=0,columnspan=8)
 
 def click(value):
