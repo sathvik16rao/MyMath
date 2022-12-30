@@ -119,9 +119,9 @@ def click(value):
         pass
 
 button_text_list = ["Del", "AC", "√", "+", "π", "sinθ", "cosθ", "tanθ",
-                    "1", "2", "3", "-", "2π", "cosecθ", "secθ", "cotθ",
+                    "7", "8", "9", "-", "2π", "cosecθ", "secθ", "cotθ",
                     "4", "5", "6", "×", chr(8731), "x\u02b8", "x\u00B3", "x\u00B2",
-                    "7", "8", "9", chr(247), "ln", "Deg", "Rad", "e",
+                    "1", "2", "3", chr(247), "ln", "Deg", "Rad", "e",
                     "0", ".", "%", "=", "log", "(", ")", "x!"]
 
 rowvalue = 1
