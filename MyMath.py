@@ -75,24 +75,46 @@ def factorial(number):
         return val
 
 def hcf(*number):
-    l = [*number]
-    n1 = l[0]
-    n2 = l[1]
-    while n2:
-        n1,n2 = n2,n1%n2
-    hcf1 = n1
-    for i in range(2,len(l)):
-        hcf1 = hcf(hcf1, l[i])
-    return hcf1
+    check = [*number]
+    if type(check[0])==list:
+        l = check[0]
+        n1 = l[0]
+        n2 = l[1]
+        while n2:
+            n1,n2 = n2,n1%n2
+        hcf1 = n1
+        for i in range(2,len(l)):
+            hcf1 = hcf(hcf1, l[i])
+        return hcf1
+    else:
+        l = [*number]
+        n1 = l[0]
+        n2 = l[1]
+        while n2:
+            n1,n2 = n2,n1%n2
+        hcf1 = n1
+        for i in range(2,len(l)):
+            hcf1 = hcf(hcf1, l[i])
+        return hcf1
 
 def lcm(*number):
-    l = [*number]
-    n1 = l[0]
-    n2 = l[1]
-    lcm_initial = int(int(n1 * n2)/int(hcf(n1,n2)))
-    for i in range(2, len(l)):
-    	lcm_initial = lcm(lcm_initial, l[i])
-    return lcm_initial
+    check = [*number]
+    if type(check[0])==list:
+        l = check[0]
+        n1 = l[0]
+        n2 = l[1]
+        lcm_initial = int(int(n1 * n2)/int(hcf(n1,n2)))
+        for i in range(2, len(l)):
+            lcm_initial = lcm(lcm_initial, l[i])
+        return lcm_initial
+    else:
+        l = [*number]
+        n1 = l[0]
+        n2 = l[1]
+        lcm_initial = int(int(n1 * n2)/int(hcf(n1,n2)))
+        for i in range(2, len(l)):
+            lcm_initial = lcm(lcm_initial, l[i])
+        return lcm_initial
 
 def sin(x):                                         #x is in radians
     val = 0
