@@ -94,7 +94,7 @@ def lcm(*number):
     	lcm_initial = lcm(lcm_initial, l[i])
     return lcm_initial
 
-def sin(x):
+def sin(x):                                         #x is in radians
     val = 0
     for n in range(51):
        odd = (2*n) + 1
@@ -102,7 +102,7 @@ def sin(x):
        val += temp
     return val
 
-def cos(x):
+def cos(x):                                         #x is in radians
     val = 0
     for n in range(51):
        even = (2*n)
@@ -110,36 +110,36 @@ def cos(x):
        val += temp
     return val
 
-def tan(x):
+def tan(x):                                         #x is in radians
     return sin(x)/cos(x)
 
-def cot(x):
+def cot(x):                                         #x is in radians
     return cos(x)/sin(x)
 
-def cosec(x):
+def cosec(x):                                       #x is in radians
     return 1/sin(x)
 
-def sec(x):
+def sec(x):                                         #x is in radians
     return 1/cos(x)
 
-def sinh(x):
+def sinh(x):                                         #x is in radians
     val = (exp(x) - exp(-x))/2
     return val
 
-def cosh(x):
+def cosh(x):                                         #x is in radians
     val = (exp(x) + exp(-x))/2
     return val
 
-def tanh(x):
+def tanh(x):                                         #x is in radians
     return sinh(x)/cosh(x)
 
-def cosech(x):
+def cosech(x):                                       #x is in radians
     return 1/sinh(x)
 
-def sech(x):
+def sech(x):                                         #x is in radians
     return 1/cosh(x)
 
-def coth(x):
+def coth(x):                                         #x is in radians
     return cosh(x)/sinh(x)
 
 def nPr(n,r):
@@ -176,7 +176,7 @@ def logn(x,base):
 def antilog(x, base):
     return base**x
 
-def sin_inv(x):
+def sin_inv(x):                                         #x is in radians
     if x>=-1 or x<=1:
         val = 0
         for n in range(51):
@@ -188,10 +188,10 @@ def sin_inv(x):
     else:
         raise ValueError('x cannot be outside the range [-1,1]')
 
-def cos_inv(x):
+def cos_inv(x):                                         #x is in radians
     return (pi/2) - sin_inv(x)
 
-def tan_inv(x):
+def tan_inv(x):                                         #x is in radians
     val = 0
     for n in range(51):
         odd = (2*n)+1
@@ -199,19 +199,19 @@ def tan_inv(x):
         val += temp
     return val
 
-def cosec_inv(x):
+def cosec_inv(x):                                       #x is in radians
     if x>=1 or x<=-1:
         return sin_inv(1/x)
     else:
         raise ValueError('x cannot be in the range (-1,1)')
 
-def sec_inv(x):
+def sec_inv(x):                                         #x is in radians
     if x>=1 or x<=-1:
         return cos_inv(1/x)
     else:
         raise ValueError('x cannot be in the range (-1,1)')
 
-def cot_inv(x):
+def cot_inv(x):                                         #x is in radians
     if x>0:
         return tan_inv(1/x)
     elif x<0:
@@ -227,12 +227,12 @@ def ranint(a,b):
     import random
     return random.randint(a,b)
 
-def sinh_inv(x):
+def sinh_inv(x):                                         #x is in radians
     temp = sqroot((x**2)+1)
     val = ln(x + temp)
     return val
 
-def cosh_inv(x):
+def cosh_inv(x):                                         #x is in radians
     if x>=1:
         temp = sqroot((x**2)-1)
         val = ln(x + temp)
@@ -240,7 +240,7 @@ def cosh_inv(x):
     else:
         raise ValueError('Domain of cosh_inv is [1,∞)')
 
-def tanh_inv(x):
+def tanh_inv(x):                                         #x is in radians
     if -1<x<1:
         temp = (1+x)/(1-x)
         val = (1/2)*ln(temp)
@@ -248,7 +248,7 @@ def tanh_inv(x):
     else: 
         raise ValueError('Domain of cosh_inv is (-1,1)')
 
-def cosech_inv(x):
+def cosech_inv(x):                                       #x is in radians
     if x!=0:
         temp = sqroot((1/(x**2))+1)
         val = ln((1/x)+temp)
@@ -256,7 +256,7 @@ def cosech_inv(x):
     else:
         raise ValueError('Domain of cosech_inv is R-{0}')
 
-def sech_inv(x):
+def sech_inv(x):                                         #x is in radians
     if 0 < x <= 1:
         temp = sqroot((1/(x**2))-1)
         val = ln((1/x)+temp)
@@ -264,7 +264,7 @@ def sech_inv(x):
     else:
         raise ValueError('Domain of sech_inv is (0,1]')
 
-def coth_inv(x):
+def coth_inv(x):                                         #x is in radians
     if x<-1 or x>1:
         temp = (x+1)/(x-1)
         val = (1/2)*(ln(temp))
