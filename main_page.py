@@ -79,6 +79,10 @@ def click(value):
             result = MyMath.factorial(eval(val))
             entryField.delete(0,END)
             entryField.insert(0, result)
+        elif value=="%":
+            result = (eval(val))*100
+            entryField.delete(0,END)
+            entryField.insert(0, result)
         
         
         #Trigonometric functions
