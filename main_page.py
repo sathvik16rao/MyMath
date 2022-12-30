@@ -7,6 +7,16 @@ main.config(bg='#000000')
 main.geometry('450x335')
 main.resizable(FALSE,FALSE)
 
+def open_ec():
+    import extended_calc
+
+my_menu = Menu(main)
+main.config(menu=my_menu)
+modules = Menu(my_menu, tearoff=0)
+my_menu.add_cascade(label="Menu", menu=modules)
+modules.add_command(label='Extended Calculator', command=open_ec)
+modules.add_command(label='Exit', command=main.quit)
+
 entryField = Entry(main, font=('times new roman',20,'bold'), bg='#000000', fg='#F1DDCF', bd=5, relief=RIDGE, width = 31, insertbackground = 'white')
 entryField.grid(row=0,column=0,columnspan=8)
 
