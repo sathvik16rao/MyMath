@@ -9,13 +9,21 @@ main.resizable(FALSE,FALSE)
 
 def open_ec():
     import extended_calc
+def open_help():
+    import instructions
 
 my_menu = Menu(main)
 main.config(menu=my_menu)
+
 modules = Menu(my_menu, tearoff=0)
 my_menu.add_cascade(label="Menu", menu=modules)
 modules.add_command(label='Extended Calculator', command=open_ec)
-modules.add_command(label='Exit', command=main.quit)
+modules.add_separator()
+modules.add_command(label='Exit', command=main.destroy)
+
+instruction = Menu(my_menu, tearoff=0)
+my_menu.add_cascade(label="Help", menu=instruction)
+instruction.add_command(label='How to use calculator', command=open_help)
 
 entryField = Entry(main, font=('times new roman',20,'bold'), bg='#000000', fg='#F1DDCF', bd=5, relief=RIDGE, width = 31, insertbackground = 'white')
 entryField.grid(row=0,column=0,columnspan=8)
