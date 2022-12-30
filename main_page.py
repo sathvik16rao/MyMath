@@ -30,43 +30,19 @@ def click(value):
         elif value=='AC':
             entryField.delete(0,END)
         elif value=="√":
-            result = MyMath.sqmain(eval(val))
+            result = MyMath.sqroot(eval(val))
             entryField.delete(0,END)
             entryField.insert(0, result)
         elif value=="π":
             result = MyMath.pi
             entryField.delete(0,END)
             entryField.insert(0, result)
-        elif value=="sinθ":
-            result = MyMath.sin(MyMath.radians(eval(val)))
-            entryField.delete(0,END)
-            entryField.insert(0, result)
-        elif value=="cosθ":
-            result = MyMath.cos(MyMath.radians(eval(val)))
-            entryField.delete(0,END)
-            entryField.insert(0, result)
-        elif value=="tanθ":
-            result = MyMath.cos(MyMath.radians(eval(val)))
-            entryField.delete(0,END)
-            entryField.insert(0, result)
         elif value=="2π":
             result = 2*MyMath.pi
             entryField.delete(0,END)
             entryField.insert(0, result)
-        elif value=="cosecθ":
-            result = MyMath.cosec(MyMath.radians(eval(val)))
-            entryField.delete(0,END)
-            entryField.insert(0, result)
-        elif value=="secθ":
-            result = MyMath.sec(MyMath.radians(eval(val)))
-            entryField.delete(0,END)
-            entryField.insert(0, result)
-        elif value=="cotθ":
-            result = MyMath.cot(MyMath.radians(eval(val)))
-            entryField.delete(0,END)
-            entryField.insert(0, result)
-        elif value==chr(8731):                  #cube main
-            result = MyMath.nthmain(eval(val),3)
+        elif value==chr(8731):                  #cube root
+            result = MyMath.nthroot(eval(val),3)
             entryField.delete(0,END)
             entryField.insert(0, result)
         elif value=="x\u02b8":                  #x^y
@@ -103,6 +79,36 @@ def click(value):
             result = MyMath.factorial(eval(val))
             entryField.delete(0,END)
             entryField.insert(0, result)
+        
+        
+        #Trigonometric functions
+        elif value=="sin":
+            result = MyMath.sin(MyMath.radians(eval(val)))
+            entryField.delete(0,END)
+            entryField.insert(0, result)
+        elif value=="cos":
+            result = MyMath.cos(MyMath.radians(eval(val)))
+            entryField.delete(0,END)
+            entryField.insert(0, result)
+        elif value=="tan":
+            result = MyMath.cos(MyMath.radians(eval(val)))
+            entryField.delete(0,END)
+            entryField.insert(0, result)
+        elif value=="cosec":
+            result = MyMath.cosec(MyMath.radians(eval(val)))
+            entryField.delete(0,END)
+            entryField.insert(0, result)
+        elif value=="sec":
+            result = MyMath.sec(MyMath.radians(eval(val)))
+            entryField.delete(0,END)
+            entryField.insert(0, result)
+        elif value=="cot":
+            result = MyMath.cot(MyMath.radians(eval(val)))
+            entryField.delete(0,END)
+            entryField.insert(0, result)
+        
+        
+        #Arithmetic operations
         elif value==chr(247):
             entryField.insert(END, "/")
             return
@@ -118,8 +124,8 @@ def click(value):
     except SyntaxError:
         pass
 
-button_text_list = ["Del", "AC", "√", "+", "π", "sinθ", "cosθ", "tanθ",
-                    "7", "8", "9", "-", "2π", "cosecθ", "secθ", "cotθ",
+button_text_list = ["Del", "AC", "√", "+", "π", "sin", "cos", "tan",
+                    "7", "8", "9", "-", "2π", "cosec", "sec", "cot",
                     "4", "5", "6", "×", chr(8731), "x\u02b8", "x\u00B3", "x\u00B2",
                     "1", "2", "3", chr(247), "ln", "Deg", "Rad", "e",
                     "0", ".", "%", "=", "log", "(", ")", "x!"]
