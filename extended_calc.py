@@ -163,6 +163,20 @@ def click(value):
             result=MyMath.nPr(eval(l[0]), eval(l[1]))
             entryField.delete(0,END)
             entryField.insert(0, result)
+        elif value=="LCM":
+            l=val.split(',')
+            for i in range(len(l)):
+                l[i]=int(l[i])
+            result=MyMath.lcm(l)
+            entryField.delete(0,END)
+            entryField.insert(0, result)
+        elif value=="HCF":
+            l=val.split(',')
+            for i in range(len(l)):
+                l[i]=int(l[i])
+            result=MyMath.hcf(l)
+            entryField.delete(0,END)
+            entryField.insert(0, result)
         
         #Arithmetic operations
         elif value==chr(247):
@@ -186,7 +200,7 @@ button_text_list = ["Del", "AC", "√", "+", "π", "sin", "cos", "tan",
                     "1", "2", "3", chr(247), "ln", "Deg", "Rad", "e",
                     "0", ".", "%", "=", "log", "(", ")", "x!",
                     "sin\u207B\u00B9","cos\u207B\u00B9","tan\u207B\u00B9","cosec\u207B\u00B9","sec\u207B\u00B9","cot\u207B\u00B9","nCr","nPr",
-                    "sinh","cosh","tanh","cosech","sech","coth"]
+                    "sinh","cosh","tanh","cosech","sech","coth","LCM","HCF"]
 
 rowvalue = 1
 columnvalue = 0
@@ -198,7 +212,7 @@ for i in button_text_list:
     elif i in ["sin\u207B\u00B9","cos\u207B\u00B9","tan\u207B\u00B9","cosec\u207B\u00B9","sec\u207B\u00B9","cot\u207B\u00B9",
                 "sinh","cosh","tanh","cosech","sech","coth"]:
         button = Button(main, font=('calibri', 12 ,'bold'), width=5, height=2, bd=4, relief=RIDGE, text=i, bg='#DB2D43' , activebackground='#F19CBB', command=lambda button=i: click(button)).grid(row=rowvalue, column=columnvalue, padx=1,pady=1)
-    elif i in ["nCr","nPr"]:
+    elif i in ["nCr","nPr","LCM","HCF"]:
         button = Button(main, font=('calibri', 12 ,'bold'), width=5, height=2, bd=4, relief=RIDGE, text=i, bg='#007FFF' , activebackground='#89CFF0', command=lambda button=i: click(button)).grid(row=rowvalue, column=columnvalue, padx=1,pady=1)
     else:
         button = Button(main, font=('calibri', 12 ,'bold'), width=5, height=2, bd=4, relief=RIDGE, text=i, bg='#0eab8c' , activebackground='#65a897', command=lambda button=i: click(button)).grid(row=rowvalue, column=columnvalue, padx=1,pady=1)
