@@ -19,25 +19,92 @@ def click(value):
     elif value=='AC':
         entryField.delete(0,END)
     elif value=="√":
-        val = MyMath.sqroot(eval(val))
+        result = MyMath.sqroot(eval(val))
         entryField.delete(0,END)
-        entryField.insert(0, val)
+        entryField.insert(0, result)
     elif value=="π":
-        val = MyMath.pi
+        result = MyMath.pi
         entryField.delete(0,END)
-        entryField.insert(0, val)
+        entryField.insert(0, result)
     elif value=="sinθ":
-        val = MyMath.sin(eval(val))
+        result = MyMath.sin(MyMath.radians(eval(val)))
         entryField.delete(0,END)
-        entryField.insert(0, val)
-
-        
+        entryField.insert(0, result)
+    elif value=="cosθ":
+        result = MyMath.cos(MyMath.radians(eval(val)))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="tanθ":
+        result = MyMath.cos(MyMath.radians(eval(val)))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="2π":
+        result = 2*MyMath.pi
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="cosecθ":
+        result = MyMath.cosec(MyMath.radians(eval(val)))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="secθ":
+        result = MyMath.sec(MyMath.radians(eval(val)))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="cotθ":
+        result = MyMath.cot(MyMath.radians(eval(val)))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value==chr(8731):                  #cube root
+        result = MyMath.nthroot(eval(val),3)
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="x\u02b8":                  #x^y
+        entryField.insert(END, '^')
+    elif value=="x\u00B3":                  #x^3
+        result = MyMath.cube(eval(val))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="x\u00B2":                  #x^2
+        result = MyMath.square(eval(val))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="ln":
+        result = MyMath.ln(eval(val))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="Deg":
+        result = MyMath.degrees(eval(val))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="Rad":
+        result = MyMath.radians(eval(val))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="e":
+        result = MyMath.e
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="log":
+        result = MyMath.log(eval(val))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value=="x!":
+        result = MyMath.factorial(eval(val))
+        entryField.delete(0,END)
+        entryField.insert(0, result)
+    elif value==chr(247):
+        entryField.insert(END, "/")
+        return
+    elif value=="=":
+        result = eval(val)
+        entryField.delete(0,END)
+        entryField.insert(0, result)
 
 button_text_list = ["Del", "AC", "√", "+", "π", "sinθ", "cosθ", "tanθ",
                     "1", "2", "3", "-", "2π", "cosecθ", "secθ", "cotθ",
                     "4", "5", "6", "×", chr(8731), "x\u02b8", "x\u00B3", "x\u00B2",
-                    "7", "8", "9", chr(247), "ln", "deg", "rad", "e",
-                    "0", ".", "%", "=", "log₁₀", "(", ")", "x!"]
+                    "7", "8", "9", chr(247), "ln", "Deg", "Rad", "e",
+                    "0", ".", "%", "=", "log", "(", ")", "x!"]
 button_bg1 = '#faba0a'
 button_bg2 = '#0eab8c'
 button_bg3 = '#98d8ce'
