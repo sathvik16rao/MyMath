@@ -9,6 +9,7 @@ main.geometry('450x335')
 main.resizable(FALSE,FALSE)
 
 def open_ec():
+    main.destroy()
     import extended_calc
 def open_help():
     import instructions
