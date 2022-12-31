@@ -1,5 +1,6 @@
 from tkinter import *
 import MyMath
+from tkinter import messagebox
 
 main = Tk()
 main.title('Scientific Calculator')
@@ -64,9 +65,12 @@ def click(value):
             entryField.delete(0,END)
             entryField.insert(0, result)
         elif value=="ln":
-            result = MyMath.ln(eval(val))
-            entryField.delete(0,END)
-            entryField.insert(0, result)
+            try:
+                result = MyMath.ln(eval(val))
+                entryField.delete(0,END)
+                entryField.insert(0, result)
+            except ValueError:
+                messagebox.showerror('Math Error','Logarithms of negative number or zero is not defined.')
         elif value=="Deg":
             result = MyMath.degrees(eval(val))
             entryField.delete(0,END)
@@ -80,13 +84,19 @@ def click(value):
             entryField.delete(0,END)
             entryField.insert(0, result)
         elif value=="log":
-            result = MyMath.log(eval(val))
-            entryField.delete(0,END)
-            entryField.insert(0, result)
+            try:
+                result = MyMath.log(eval(val))
+                entryField.delete(0,END)
+                entryField.insert(0, result)
+            except ValueError:
+                messagebox.showerror('Math Error','Logarithms of negative number or zero is not defined.')
         elif value=="x!":
-            result = MyMath.factorial(eval(val))
-            entryField.delete(0,END)
-            entryField.insert(0, result)
+            try:
+                result = MyMath.factorial(eval(val))
+                entryField.delete(0,END)
+                entryField.insert(0, result)
+            except ValueError:
+                messagebox.showerror('Math Error','Sorry, factorial does not exist for negative numbers.')
         elif value=="%":
             result = (eval(val))*100
             entryField.delete(0,END)
