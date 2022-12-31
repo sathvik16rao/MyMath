@@ -145,6 +145,8 @@ def click(value):
             entryField.insert(END, value)
     except SyntaxError:
         pass
+    except ZeroDivisionError:
+        messagebox.showerror('Math Error', 'Division by zero is not possible.')
 
 button_text_list = ["Del", "AC", "√", "+", "π", "sin", "cos", "tan",
                     "7", "8", "9", "-", "2π", "cosec", "sec", "cot",
