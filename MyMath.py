@@ -405,7 +405,6 @@ def degrees(x):
 def factors(n):
     l=[]
     for i in range(1,n+1):
-        count +=1
         if i in l:
             break
         else:
