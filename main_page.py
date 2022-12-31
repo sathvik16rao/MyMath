@@ -13,13 +13,17 @@ def open_ec():
     import extended_calc
 def open_help():
     import instructions
+def open_sc():
+    main.destroy()
+    import Simple_calc
 
 my_menu = Menu(main)
 main.config(menu=my_menu)
 
 modules = Menu(my_menu, tearoff=0)
 my_menu.add_cascade(label="Menu", menu=modules)
-modules.add_command(label='Extended Calculator', command=open_ec)
+modules.add_command(label='Simple Calculator', command=open_sc)
+modules.add_command(label='Scientific Calculator 2.0', command=open_ec)
 modules.add_separator()
 modules.add_command(label='Exit', command=main.destroy)
 
