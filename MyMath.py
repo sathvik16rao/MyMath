@@ -184,10 +184,13 @@ def agm(a,b):
     return an
 
 def ln(x):
-    m = 35
-    s = x*(2**m)
-    val = (pi/(2*(agm(1,4/s))))-(m*0.6931471805599453)
-    return val
+    if x>0:
+        m = 35
+        s = x*(2**m)
+        val = (pi/(2*(agm(1,4/s))))-(m*0.6931471805599453)
+        return val
+    else:
+        raise ValueError('Logarithms of negative number is not defined.')
 
 def log(x):
     return ln(x)/ln(10)
