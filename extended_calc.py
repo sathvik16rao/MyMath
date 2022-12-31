@@ -5,7 +5,7 @@ from tkinter import messagebox
 main = Tk()
 main.title('Extended Scientific Calculator')
 main.config(bg='#000000')
-main.geometry('450x510')
+main.geometry('448x565')
 main.resizable(FALSE,FALSE)
 
 entryField = Entry(main, font=('times new roman',20,'bold'), bg='#000000', fg='#F1DDCF', bd=5, relief=RIDGE, width = 31, insertbackground = 'white')
@@ -79,7 +79,25 @@ def click(value):
                 entryField.insert(0, result)
             except ValueError:
                 messagebox.showerror('Math Error','Sorry, factorial does not exist for negative numbers.')
-        
+        elif value=="logn":
+            try:
+                l=val.split(',')
+                result = MyMath.logn(eval(l[0]),eval(l[1]))
+                entryField.delete(0,END)
+                entryField.insert(0, result)
+            except ValueError:
+                messagebox.showerror('Math Error','Logarithms of negative number is not defined.')
+        elif value=="\u207F√":
+            l=val.split(',')
+            result = MyMath.nthroot(eval(l[0]),eval(l[1]))
+            entryField.delete(0,END)
+            entryField.insert(0, result)
+        elif value=="eˣ":
+            result = MyMath.exp(eval(val))
+            entryField.delete(0,END)
+            entryField.insert(0, result)
+        elif value=="Fact":
+            pass
         
         #Trigonometric functions (All inputs/outputs are in degrees)
         elif value=="sin":
@@ -280,6 +298,8 @@ def click(value):
         pass
     except ZeroDivisionError:
         messagebox.showerror('Math Error', 'Division by zero is not possible.')
+    except ValueError:
+        pass
 
 button_text_list = ["Del", "AC", "√", "+", "π", "sin", "cos", "tan",
                     "7", "8", "9", "-", "2π", "cosec", "sec", "cot",
@@ -288,7 +308,8 @@ button_text_list = ["Del", "AC", "√", "+", "π", "sin", "cos", "tan",
                     "0", ".", "%", "=", "log", "(", ")", "x!",
                     "sin\u207B\u00B9","cos\u207B\u00B9","tan\u207B\u00B9","cosec\u207B\u00B9","sec\u207B\u00B9","cot\u207B\u00B9","nCr","nPr",
                     "sinh","cosh","tanh","cosech","sech","coth","LCM","HCF",
-                    "sinh\u207B\u00B9","cosh\u207B\u00B9","tanh\u207B\u00B9","csch\u207B\u00B9","sech\u207B\u00B9","coth\u207B\u00B9","Inv","Abs"]
+                    "sinh\u207B\u00B9","cosh\u207B\u00B9","tanh\u207B\u00B9","csch\u207B\u00B9","sech\u207B\u00B9","coth\u207B\u00B9","Inv","Abs",
+                    "CONST"," ",",","Fact","Pfact","eˣ","\u207F√","logn"]
 
 rowvalue = 1
 columnvalue = 0
@@ -300,7 +321,7 @@ for i in button_text_list:
     elif i in ["sin\u207B\u00B9","cos\u207B\u00B9","tan\u207B\u00B9","cosec\u207B\u00B9","sec\u207B\u00B9","cot\u207B\u00B9",
                 "sinh","cosh","tanh","cosech","sech","coth","sinh\u207B\u00B9","cosh\u207B\u00B9","tanh\u207B\u00B9","csch\u207B\u00B9","sech\u207B\u00B9","coth\u207B\u00B9"]:
         button = Button(main, font=('calibri', 12 ,'bold'), width=5, height=2, bd=4, relief=RIDGE, text=i, bg='#DB2D43' , activebackground='#F19CBB', command=lambda button=i: click(button)).grid(row=rowvalue, column=columnvalue, padx=1,pady=1)
-    elif i in ["nCr","nPr","LCM","HCF","Inv","Abs"]:
+    elif i in ["nCr","nPr","LCM","HCF","Inv","Abs","Fact","Pfact","eˣ","\u207F√","logn","CONST"," ",","]:
         button = Button(main, font=('calibri', 12 ,'bold'), width=5, height=2, bd=4, relief=RIDGE, text=i, bg='#007FFF' , activebackground='#89CFF0', command=lambda button=i: click(button)).grid(row=rowvalue, column=columnvalue, padx=1,pady=1)
     else:
         button = Button(main, font=('calibri', 12 ,'bold'), width=5, height=2, bd=4, relief=RIDGE, text=i, bg='#0eab8c' , activebackground='#65a897', command=lambda button=i: click(button)).grid(row=rowvalue, column=columnvalue, padx=1,pady=1)
