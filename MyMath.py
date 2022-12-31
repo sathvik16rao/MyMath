@@ -1,5 +1,9 @@
 def add(*number):
-    l = [*number]
+    check = [*number]
+    if type(check[0])==list:
+        l = check[0]
+    else:
+        l = [*number]
     total = l[0]
     l.pop(0)
     for i in l:
@@ -7,7 +11,11 @@ def add(*number):
     return total
 
 def difference(*number):
-    l = [*number]
+    check = [*number]
+    if type(check[0])==list:
+        l = check[0]
+    else:
+        l = [*number]
     diff = l[0]
     l.pop(0)
     for i in l:
@@ -15,7 +23,11 @@ def difference(*number):
     return diff
 
 def multiply(*number):
-    l = [*number]
+    check = [*number]
+    if type(check[0])==list:
+        l = check[0]
+    else:
+        l = [*number]
     mul = l[0]
     l.pop(0)
     for i in l:
@@ -78,43 +90,29 @@ def hcf(*number):
     check = [*number]
     if type(check[0])==list:
         l = check[0]
-        n1 = l[0]
-        n2 = l[1]
-        while n2:
-            n1,n2 = n2,n1%n2
-        hcf1 = n1
-        for i in range(2,len(l)):
-            hcf1 = hcf(hcf1, l[i])
-        return hcf1
     else:
         l = [*number]
-        n1 = l[0]
-        n2 = l[1]
-        while n2:
-            n1,n2 = n2,n1%n2
-        hcf1 = n1
-        for i in range(2,len(l)):
-            hcf1 = hcf(hcf1, l[i])
-        return hcf1
+    n1 = l[0]
+    n2 = l[1]
+    while n2:
+        n1,n2 = n2,n1%n2
+    hcf1 = n1
+    for i in range(2,len(l)):
+        hcf1 = hcf(hcf1, l[i])
+    return hcf1
 
 def lcm(*number):
     check = [*number]
     if type(check[0])==list:
         l = check[0]
-        n1 = l[0]
-        n2 = l[1]
-        lcm_initial = int(int(n1 * n2)/int(hcf(n1,n2)))
-        for i in range(2, len(l)):
-            lcm_initial = lcm(lcm_initial, l[i])
-        return lcm_initial
     else:
         l = [*number]
-        n1 = l[0]
-        n2 = l[1]
-        lcm_initial = int(int(n1 * n2)/int(hcf(n1,n2)))
-        for i in range(2, len(l)):
-            lcm_initial = lcm(lcm_initial, l[i])
-        return lcm_initial
+    n1 = l[0]
+    n2 = l[1]
+    lcm_initial = int(int(n1 * n2)/int(hcf(n1,n2)))
+    for i in range(2, len(l)):
+        lcm_initial = lcm(lcm_initial, l[i])
+    return lcm_initial
 
 def sin(x):                                         #x is in radians
     val = 0
@@ -156,13 +154,19 @@ def tanh(x):                                         #x is in radians
     return sinh(x)/cosh(x)
 
 def cosech(x):                                       #x is in radians
-    return 1/sinh(x)
+    if x != 0:
+        return 1/sinh(x)
+    else:
+        raise ValueError('Domain of cosech is R-{0}')
 
 def sech(x):                                         #x is in radians
     return 1/cosh(x)
 
 def coth(x):                                         #x is in radians
-    return cosh(x)/sinh(x)
+    if x != 0:
+        return cosh(x)/sinh(x)
+    else:
+        raise ValueError('Domain of coth is R-{0}')
 
 def nPr(n,r):
     if n>=r:
@@ -193,10 +197,16 @@ def ln(x):
         raise ValueError('Logarithms of negative number is not defined.')
 
 def log(x):
-    return ln(x)/ln(10)
+    if x>0:
+        return ln(x)/ln(10)
+    else:
+        raise ValueError('Logarithms of negative number is not defined.')
 
 def logn(x,base):
-    return ln(x)/ln(base)
+    if x>0:
+        return ln(x)/ln(base)
+    else:
+        raise ValueError('Logarithms of negative number is not defined.')
 
 def antilog(x, base):
     return base**x
@@ -214,7 +224,10 @@ def sin_inv(x):                                         #x is in radians
         raise ValueError('x cannot be outside the range [-1,1]')
 
 def cos_inv(x):                                         #x is in radians
-    return (pi/2) - sin_inv(x)
+    if x>=-1 or x<=1:
+        return (pi/2) - sin_inv(x)
+    else:
+        raise ValueError('x cannot be outside the range [-1,1]')
 
 def tan_inv(x):                                         #x is in radians
     val = 0
