@@ -8,6 +8,25 @@ main.config(bg='#000000')
 main.geometry('448x565')
 main.resizable(FALSE,FALSE)
 
+def open_mc():
+    main.destroy()
+    import main_page
+def open_help():
+    import instructions
+
+my_menu = Menu(main)
+main.config(menu=my_menu)
+
+back = Menu(my_menu, tearoff=0)
+my_menu.add_cascade(label="Go Back", menu=back)
+back.add_command(label='Back to Calculator', command=open_mc)
+back.add_separator()
+back.add_command(label='Exit', command=main.destroy)
+
+instruction = Menu(my_menu, tearoff=0)
+my_menu.add_cascade(label="Help", menu=instruction)
+instruction.add_command(label='How to use calculator', command=open_help)
+
 entryField = Entry(main, font=('times new roman',20,'bold'), bg='#000000', fg='#F1DDCF', bd=5, relief=RIDGE, width = 31, insertbackground = 'white')
 entryField.grid(row=0,column=0,columnspan=8)
 
