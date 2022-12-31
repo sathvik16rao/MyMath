@@ -385,3 +385,16 @@ def radians(x):
 def degrees(x):
     val = 180/pi
     return x*val
+
+def factors(n):
+    l=[]
+    for i in range(1,n+1):
+        count +=1
+        if i in l:
+            break
+        else:
+            if n%i==0:
+                l.append(i)
+                if n/i not in l:
+                    l.append(int(n/i))
+    return sorted(l)
