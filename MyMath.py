@@ -172,13 +172,13 @@ def nPr(n,r):
     if n>=r:
         return int(factorial(n)/factorial(n-r))
     else:
-        raise ValueError('r cannot be less than n.')
+        raise ValueError('r cannot be greater than n.')
 
 def nCr(n,r):
     if n>=r:
         return int(factorial(n)/((factorial(n-r))*(factorial(r))))
     else:
-        raise ValueError('r cannot be less than n.')
+        raise ValueError('r cannot be greater than n.')
 
 def agm(a,b):
     tolerance = 1e-14
@@ -276,7 +276,7 @@ def cosh_inv(x):                                         #x is in radians
         val = ln(x + temp)
         return val
     else:
-        raise ValueError('Domain of cosh_inv is [1,∞).')
+        raise ValueError('Domain of cosh\u207B\u00B9 is [1,∞).')
 
 def tanh_inv(x):                                         #x is in radians
     if -1<x<1:
@@ -284,7 +284,7 @@ def tanh_inv(x):                                         #x is in radians
         val = (1/2)*ln(temp)
         return val
     else: 
-        raise ValueError('Domain of cosh_inv is (-1,1).')
+        raise ValueError('Domain of tanh\u207B\u00B9 is (-1,1).')
 
 def cosech_inv(x):                                       #x is in radians
     if x!=0:
@@ -292,7 +292,7 @@ def cosech_inv(x):                                       #x is in radians
         val = ln((1/x)+temp)
         return val
     else:
-        raise ValueError('Domain of cosech_inv is R-{0}.')
+        raise ValueError('Domain of cosech\u207B\u00B9 is R-{0}.')
 
 def sech_inv(x):                                         #x is in radians
     if 0 < x <= 1:
@@ -300,7 +300,7 @@ def sech_inv(x):                                         #x is in radians
         val = ln((1/x)+temp)
         return val
     else:
-        raise ValueError('Domain of sech_inv is (0,1].')
+        raise ValueError('Domain of sech\u207B\u00B9 is (0,1].')
 
 def coth_inv(x):                                         #x is in radians
     if x<-1 or x>1:
@@ -308,7 +308,7 @@ def coth_inv(x):                                         #x is in radians
         val = (1/2)*(ln(temp))
         return val
     else:
-        raise ValueError('Domain of coth_inv is (-∞,-1)u(1,+∞).')
+        raise ValueError('Domain of coth\u207B\u00B9 is (-∞,-1)u(1,+∞).')
 
 #Universal constants
 Z0 = 376.730313668                      #Characteristic impedance of vacuum
