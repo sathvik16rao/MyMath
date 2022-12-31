@@ -3,7 +3,7 @@ import MyMath
 from tkinter import messagebox
 
 main = Tk()
-main.title('Extended Scientific Calculator')
+main.title('Scientific Calculator 2.0')
 main.config(bg='#000000')
 main.geometry('448x565')
 main.resizable(FALSE,FALSE)
