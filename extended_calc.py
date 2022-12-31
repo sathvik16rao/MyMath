@@ -309,6 +309,9 @@ def click(value):
             result = eval(val)
             entryField.delete(0,END)
             entryField.insert(0, result)
+        
+        elif value=="CONST":
+            messagebox.showinfo('Under Construction', 'Button does not have a function yet.')
         else:
             entryField.insert(END, value)
     except SyntaxError:
@@ -330,7 +333,7 @@ button_text_list = ["Del", "AC", "√", "+", "π", "sin", "cos", "tan",
                     "sin\u207B\u00B9","cos\u207B\u00B9","tan\u207B\u00B9","cosec\u207B\u00B9","sec\u207B\u00B9","cot\u207B\u00B9","nCr","nPr",
                     "sinh","cosh","tanh","cosech","sech","coth","LCM","HCF",
                     "sinh\u207B\u00B9","cosh\u207B\u00B9","tanh\u207B\u00B9","csch\u207B\u00B9","sech\u207B\u00B9","coth\u207B\u00B9","Inv","Abs",
-                    ",","Fact","eˣ","\u207F√","logn"]
+                    "CONST",",","Fact","eˣ","\u207F√","logn"]
 
 rowvalue = 1
 columnvalue = 0
@@ -342,7 +345,7 @@ for i in button_text_list:
     elif i in ["sin\u207B\u00B9","cos\u207B\u00B9","tan\u207B\u00B9","cosec\u207B\u00B9","sec\u207B\u00B9","cot\u207B\u00B9",
                 "sinh","cosh","tanh","cosech","sech","coth","sinh\u207B\u00B9","cosh\u207B\u00B9","tanh\u207B\u00B9","csch\u207B\u00B9","sech\u207B\u00B9","coth\u207B\u00B9"]:
         button = Button(main, font=('calibri', 12 ,'bold'), width=5, height=2, bd=4, relief=RIDGE, text=i, bg='#DB2D43' , activebackground='#F19CBB', command=lambda button=i: click(button)).grid(row=rowvalue, column=columnvalue, padx=1,pady=1)
-    elif i in ["nCr","nPr","LCM","HCF","Inv","Abs","Fact","eˣ","\u207F√","logn",","]:
+    elif i in ["nCr","nPr","LCM","HCF","Inv","Abs","Fact","eˣ","\u207F√","logn",",","CONST"]:
         button = Button(main, font=('calibri', 12 ,'bold'), width=5, height=2, bd=4, relief=RIDGE, text=i, bg='#007FFF' , activebackground='#89CFF0', command=lambda button=i: click(button)).grid(row=rowvalue, column=columnvalue, padx=1,pady=1)
     else:
         button = Button(main, font=('calibri', 12 ,'bold'), width=5, height=2, bd=4, relief=RIDGE, text=i, bg='#0eab8c' , activebackground='#65a897', command=lambda button=i: click(button)).grid(row=rowvalue, column=columnvalue, padx=1,pady=1)
