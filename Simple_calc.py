@@ -3,7 +3,7 @@ import MyMath
 from tkinter import messagebox
 
 main = Tk()
-main.title('Scientific Calculator')
+main.title('Simple Calculator')
 main.config(bg='#000000')
 main.geometry('225x335')
 main.resizable(FALSE,FALSE)
@@ -16,7 +16,7 @@ my_menu = Menu(main)
 main.config(menu=my_menu)
 
 back = Menu(my_menu, tearoff=0)
-my_menu.add_cascade(label="Menu", menu=back)
+my_menu.add_cascade(label="Go Back", menu=back)
 back.add_command(label='Go Back to Calculator', command=open_mc)
 back.add_separator()
 back.add_command(label='Exit', command=main.destroy)
