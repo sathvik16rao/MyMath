@@ -45,12 +45,10 @@ def click(value):
             entryField.insert(0, result)
         elif value=="π":
             result = MyMath.pi
-            entryField.delete(0,END)
-            entryField.insert(0, result)
+            entryField.insert(END, result)
         elif value=="2π":
             result = 2*MyMath.pi
-            entryField.delete(0,END)
-            entryField.insert(0, result)
+            entryField.insert(END, result)
         elif value==chr(8731):                  #cube root
             result = MyMath.nthroot(eval(val),3)
             entryField.delete(0,END)
@@ -82,8 +80,7 @@ def click(value):
             entryField.insert(0, result)
         elif value=="e":
             result = MyMath.e
-            entryField.delete(0,END)
-            entryField.insert(0, result)
+            entryField.insert(END, result)
         elif value=="log":
             try:
                 result = MyMath.log(eval(val))
