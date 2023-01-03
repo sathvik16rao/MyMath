@@ -12,7 +12,7 @@ def open_mc():
     main.destroy()
     import main_page
 def open_help():
-    rules()
+    import instructions
 
 my_menu = Menu(main)
 main.config(menu=my_menu)
