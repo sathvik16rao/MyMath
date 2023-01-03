@@ -8,7 +8,7 @@ from extended_calc import extcalc
 main = Tk()
 main.title('Scientific Calculator')
 main.config(bg='#000000')
-main.geometry('450x335')
+main.geometry('448x333')
 main.resizable(FALSE,FALSE)
 
 def open_ec():
