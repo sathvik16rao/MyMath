@@ -1,6 +1,9 @@
 from tkinter import *
 import MyMath
 from tkinter import messagebox
+from Simple_calc import simply
+from instructions import rules
+from extended_calc import extcalc
 
 main = Tk()
 main.title('Scientific Calculator')
@@ -10,12 +13,12 @@ main.resizable(FALSE,FALSE)
 
 def open_ec():
     main.destroy()
-    import extended_calc
+    extcalc()
 def open_help():
-    import instructions
+    rules()
 def open_sc():
     main.destroy()
-    import Simple_calc
+    simply()
 
 my_menu = Menu(main)
 main.config(menu=my_menu)
