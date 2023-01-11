@@ -329,3 +329,9 @@ def factors(n):
                 if n/i not in l:
                     l.append(int(n/i))
     return sorted(l)
+
+def summation(function, lower, upper):                  #input a functin only (eg: lambda x: x*2)
+    val = 0
+    for i in range(lower, upper+1):
+        val += function(i)
+    return val
