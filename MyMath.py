@@ -335,3 +335,10 @@ def summation(function, lower, upper):                  #input a functin only (e
     for i in range(lower, upper+1):
         val += function(i)
     return val
+
+def rep_product(function,lower,upper):
+    val = []
+    val.append(function(lower))
+    for i in range(lower+1, upper+1):
+        val[0] *= function(i)
+    return val[0]
