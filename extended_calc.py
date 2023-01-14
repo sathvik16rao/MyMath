@@ -254,6 +254,8 @@ def click(value):
             try:
                 if 'C' in val:
                     l=val.split('C')
+                elif ',' in val:
+                    l=val.split(',')
                 else:
                     l=val.split('c')
                 result=MyMath.nCr(eval(l[0]), eval(l[1]))
@@ -265,6 +267,8 @@ def click(value):
             try:
                 if 'P' in val:
                     l=val.split('P')
+                elif ',' in val:
+                    l=val.split(',')
                 else:
                     l=val.split('p')
                 result=MyMath.nPr(eval(l[0]), eval(l[1]))
