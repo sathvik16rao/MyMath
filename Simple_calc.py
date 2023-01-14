@@ -56,7 +56,7 @@ def click(value):
         else:
             entryField.insert(END, value)
     except SyntaxError:
-        pass
+        messagebox.showerror('Syntax Error', "Oops! Please check the entered expression.")
     except ZeroDivisionError:
         messagebox.showerror('Math Error', "Oops! Division by zero will break math and we don't want that now, do we?")
 
@@ -79,5 +79,9 @@ for i in button_text_list:
     if columnvalue > 3:
         rowvalue += 1
         columnvalue = 0
+
+def func(x):
+    click("=")
+main.bind('<Return>', func)
 
 main.mainloop()

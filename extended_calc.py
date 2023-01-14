@@ -318,7 +318,7 @@ def click(value):
         else:
             entryField.insert(END, value)
     except SyntaxError:
-        pass
+        messagebox.showerror('Syntax Error', "Oops! Please check the entered expression.")
     except IndexError:
         pass
     except NameError:
@@ -358,5 +358,9 @@ for i in button_text_list:
     if columnvalue > 7:
         rowvalue += 1
         columnvalue = 0
+
+def func(x):
+    click("=")
+main.bind('<Return>', func)
 
 main.mainloop()
