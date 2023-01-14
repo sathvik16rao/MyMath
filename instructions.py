@@ -17,7 +17,7 @@ l3.place(x = 20, y = 75)
 l4 = Label(root,text='\u2022 For the function x\u02b8 -> Input value of "x" and then click on the x\u02b8 button. Now input the value of "y". Click "=" for the result.', font=('Times new roman',15))
 l4.place(x = 20, y = 100)
 
-l5 = Label(root,text='\u2022 For nCr and nPr, input in the same format and click on the respective button for the result (Eg: 6C2 or 6c2 or 6P2 or 6p2)', font=('Times new roman',15))
+l5 = Label(root,text='\u2022 For nCr and nPr, input in the same format or input in the format "n,r" and click on the respective button for the result. (Eg: 6C2 or 6c2 or 6P2 or 6p2 or 6,2)', font=('Times new roman',15))
 l5.place(x = 20, y = 125)
 
 l6 = Label(root,text='\u2022 For LCM and HCF, input all th numbers seperated by commas and click on the respective button for the result.', font=('Times new roman',15))
