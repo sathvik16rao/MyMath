@@ -296,6 +296,10 @@ def click(value):
             entryField.insert(0, result)
         
         #Arithmetic operations
+        elif value=="%":
+            result= (eval(val))*100
+            entryField.delete(0,END)
+            entryField.insert(0, result)
         elif value==chr(247):
             entryField.insert(END, "/")
             return
