@@ -148,7 +148,7 @@ def click(value):
     except SyntaxError:
         pass
     except ZeroDivisionError:
-        messagebox.showerror('Math Error', 'Division by zero is not possible.')
+        messagebox.showerror('Math Error', "Oops! Division by zero will break math and we don't want that now, do we?")
 
 button_text_list = ["Del", "AC", "√", "+", "π", "sin", "cos", "tan",
                     "7", "8", "9", "-", "2π", "cosec", "sec", "cot",

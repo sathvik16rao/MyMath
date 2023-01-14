@@ -320,7 +320,7 @@ def click(value):
     except NameError:
         pass
     except ZeroDivisionError:
-        messagebox.showerror('Math Error', 'Division by zero is not possible.')
+        messagebox.showerror('Math Error', "Oops! Division by zero will break math and we don't want that now, do we?")
     except ValueError:
         pass
 
