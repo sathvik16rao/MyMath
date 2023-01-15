@@ -5,7 +5,7 @@ from tkinter import messagebox
 main = Tk()
 main.title('Scientific Calculator')
 main.config(bg='#000000')
-main.geometry('448x333')
+main.geometry('448x372')
 main.resizable(FALSE,FALSE)
 
 def open_ec():
@@ -33,6 +33,8 @@ instruction.add_command(label='How to use calculator', command=open_help)
 
 entryField = Entry(main, font=('times new roman',20,'bold'), bg='#000000', fg='#F1DDCF', bd=5, relief=RIDGE, width = 31, insertbackground = 'white')
 entryField.grid(row=0,column=0,columnspan=8)
+
+angle_unit = "Deg"
 
 def click(value):
     val = entryField.get()
@@ -107,27 +109,45 @@ def click(value):
         
         #Trigonometric functions
         elif value=="sin":
-            result = MyMath.sin(MyMath.radians(eval(val)))
+            if angle_unit=="Deg":
+                result = MyMath.sin(MyMath.radians(eval(val)))
+            else:
+                result = MyMath.sin(eval(val))
             entryField.delete(0,END)
             entryField.insert(0, result)
         elif value=="cos":
-            result = MyMath.cos(MyMath.radians(eval(val)))
+            if angle_unit=="Deg":
+                result = MyMath.cos(MyMath.radians(eval(val)))
+            else:
+                result = MyMath.cos(eval(val))
             entryField.delete(0,END)
             entryField.insert(0, result)
         elif value=="tan":
-            result = MyMath.cos(MyMath.radians(eval(val)))
+            if angle_unit=="Deg":
+                result = MyMath.tan(MyMath.radians(eval(val)))
+            else:
+                result = MyMath.tan(eval(val))
             entryField.delete(0,END)
             entryField.insert(0, result)
         elif value=="cosec":
-            result = MyMath.cosec(MyMath.radians(eval(val)))
+            if angle_unit=="Deg":
+                result = MyMath.cosec(MyMath.radians(eval(val)))
+            else:
+                result = MyMath.cosec(eval(val))
             entryField.delete(0,END)
             entryField.insert(0, result)
         elif value=="sec":
-            result = MyMath.sec(MyMath.radians(eval(val)))
+            if angle_unit=="Deg":
+                result = MyMath.sec(MyMath.radians(eval(val)))
+            else:
+                result = MyMath.sec(eval(val))
             entryField.delete(0,END)
             entryField.insert(0, result)
         elif value=="cot":
-            result = MyMath.cot(MyMath.radians(eval(val)))
+            if angle_unit=="Deg":
+                result = MyMath.cot(MyMath.radians(eval(val)))
+            else:
+                result = MyMath.cot(eval(val))
             entryField.delete(0,END)
             entryField.insert(0, result)
         
@@ -156,7 +176,7 @@ button_text_list = ["Del", "AC", "√", "+", "π", "sin", "cos", "tan",
                     "1", "2", "3", chr(247), "ln", "Deg", "Rad", "e",
                     "0", ".", "%", "=", "log", "(", ")", "x!"]
 
-rowvalue = 1
+rowvalue = 2
 columnvalue = 0
 for i in button_text_list:
     if i in '0123456789':
@@ -169,6 +189,24 @@ for i in button_text_list:
     if columnvalue > 7:
         rowvalue += 1
         columnvalue = 0
+
+def click_angle(string):
+    global angle_unit
+    if string =="Deg":
+        angle_unit = "Deg"
+        angle_label = Label(main, text='All input and output angles are in Degrees',font=('times new roman',10, 'bold'), bg='#000000', fg='#F1DDCF', bd=5)
+        angle_label.grid(row=1, column=2, columnspan=6)
+    else:
+        angle_unit = "Rad"
+        angle_label = Label(main, text='All input and output angles are in Radians',font=('times new roman',10, 'bold'), bg='#000000', fg='#F1DDCF', bd=5)
+        angle_label.grid(row=1, column=2, columnspan=6)
+
+angle_button1 = Button(main, font=('calibri', 12 ,'bold'), width=5, height=0, bd=4, relief=RIDGE, text="Rad", bg='#AB274F' , activebackground='#AB274F', command=lambda button="Rad": click_angle(button))
+angle_button1.grid(row=1, column=0, padx=1,pady=1)
+angle_button2 = Button(main, font=('calibri', 12 ,'bold'), width=5, height=0, bd=4, relief=RIDGE, text="Deg", bg='#AB274F' , activebackground='#AB274F', command=lambda button="Deg": click_angle(button))
+angle_button2.grid(row=1, column=1, padx=1,pady=1)
+angle_label = Label(main, text='All input and output angles are in Degrees',font=('times new roman',10, 'bold'), bg='#000000', fg='#F1DDCF', bd=5)
+angle_label.grid(row=1, column=2, columnspan=6)
 
 def func(x):
     click("=")
