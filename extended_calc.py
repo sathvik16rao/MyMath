@@ -70,7 +70,7 @@ def click(value):
                 result = MyMath.ln(eval(val))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Logarithms of negative number or zero is not defined.')
         elif value=="Deg":
             result = MyMath.degrees(eval(val))
@@ -88,14 +88,14 @@ def click(value):
                 result = MyMath.log(eval(val))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Logarithms of negative number or zero is not defined.')
         elif value=="x!":
             try:
                 result = MyMath.factorial(eval(val))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Sorry, factorial does not exist for negative numbers.')
         elif value=="logn":
             try:
@@ -103,7 +103,7 @@ def click(value):
                 result = MyMath.logn(eval(l[0]),eval(l[1]))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Logarithms of negative number is not defined.')
         elif value=="\u207F√":
             l=val.split(',')
@@ -170,7 +170,7 @@ def click(value):
                     result = MyMath.sin_inv(eval(val))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','x cannot be outside the range [-1,1].')
         elif value=="cos\u207B\u00B9":
             try:
@@ -180,7 +180,7 @@ def click(value):
                     result = MyMath.cos_inv(eval(val))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('x cannot be outside the range [-1,1].')
         elif value=="tan\u207B\u00B9":
             if angle_unit=="Deg":
@@ -197,7 +197,7 @@ def click(value):
                     result = MyMath.cosec_inv(eval(val))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error', 'x cannot be in the range (-1,1).')
         elif value=="sec\u207B\u00B9":
             try:
@@ -207,7 +207,7 @@ def click(value):
                     result = MyMath.sec_inv(eval(val))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','x cannot be in the range (-1,1).')
         elif value=="cot\u207B\u00B9":
             if angle_unit=="Deg":
@@ -233,7 +233,7 @@ def click(value):
                 result = MyMath.cosech((eval(val)))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Domain of cosech is R-{0}.')
         elif value=="sech":
             result = MyMath.sech((eval(val)))
@@ -244,7 +244,7 @@ def click(value):
                 result = MyMath.coth((eval(val)))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Domain of coth is R-{0}.')
         elif value=="sinh\u207B\u00B9":
             result = MyMath.sinh_inv((eval(val)))
@@ -255,35 +255,35 @@ def click(value):
                 result = MyMath.cosh_inv((eval(val)))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Domain of cosh\u207B\u00B9 is [1,∞).')
         elif value=="tanh\u207B\u00B9":
             try:
                 result = MyMath.tanh_inv((eval(val)))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Domain of tanh\u207B\u00B9 is (-1,1).')
         elif value=="csch\u207B\u00B9":
             try:
                 result = MyMath.cosech_inv((eval(val)))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Domain of cosech_inv is R-{0}.')
         elif value=="sech\u207B\u00B9":
             try:
                 result = MyMath.sech_inv((eval(val)))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error', 'Domain of sech_inv is (0,1].')
         elif value=="coth\u207B\u00B9":
             try:
                 result = MyMath.coth_inv((eval(val)))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Domain of coth_inv is (-∞,-1)u(1,+∞).')
 
             
@@ -299,7 +299,7 @@ def click(value):
                 result=MyMath.nCr(eval(l[0]), eval(l[1]))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','r cannot be greater than n.')
         elif value=="nPr":
             try:
@@ -312,7 +312,7 @@ def click(value):
                 result=MyMath.nPr(eval(l[0]), eval(l[1]))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','r cannot be greater than n.')
         elif value=="LCM":
             l=val.split(',')
@@ -361,13 +361,9 @@ def click(value):
             entryField.insert(END, value)
     except SyntaxError:
         messagebox.showerror('Syntax Error', "Oops! Please check the entered expression.")
-    except IndexError:
-        pass
-    except NameError:
-        pass
     except ZeroDivisionError:
         messagebox.showerror('Math Error', "Oops! Division by zero will break math and we don't want that now, do we?")
-    except ValueError:
+    except:
         pass
 
 button_text_list = ["Del", "AC", "√", "+", "π", "sin", "cos", "tan",

@@ -1,3 +1,9 @@
+class MathError(Exception):
+    def __init__(self, string):
+        self.string = string
+    def __str__(self):
+        return self.string
+
 def add(*number):
     check = [*number]
     if type(check[0])==list:
@@ -36,7 +42,7 @@ def multiply(*number):
 
 def division(numerator,denominator):
     if denominator == 0:
-        raise ValueError('Divivsion with zero is not possible.')
+        raise MathError('Divivsion with zero is not possible.')
     else:
         return numerator/denominator
 
@@ -77,7 +83,7 @@ def exp(x):
 
 def factorial(number):
     if number < 0:
-        raise ValueError("Sorry, factorial does not exist for negative numbers.")
+        raise MathError("Sorry, factorial does not exist for negative numbers.")
     elif number == 0:
         return 1
     else:
@@ -157,7 +163,7 @@ def cosech(x):                                       #x is in radians
     if x != 0:
         return 1/sinh(x)
     else:
-        raise ValueError('Domain of cosech is R-{0}.')
+        raise MathError('Domain of cosech is R-{0}.')
 
 def sech(x):                                         #x is in radians
     return 1/cosh(x)
@@ -166,19 +172,19 @@ def coth(x):                                         #x is in radians
     if x != 0:
         return cosh(x)/sinh(x)
     else:
-        raise ValueError('Domain of coth is R-{0}.')
+        raise MathError('Domain of coth is R-{0}.')
 
 def nPr(n,r):
     if n>=r:
         return int(factorial(n)/factorial(n-r))
     else:
-        raise ValueError('r cannot be greater than n.')
+        raise MathError('r cannot be greater than n.')
 
 def nCr(n,r):
     if n>=r:
         return int(factorial(n)/((factorial(n-r))*(factorial(r))))
     else:
-        raise ValueError('r cannot be greater than n.')
+        raise MathError('r cannot be greater than n.')
 
 def agm(a,b):
     tolerance = 1e-14
@@ -194,19 +200,19 @@ def ln(x):
         val = (pi/(2*(agm(1,4/s))))-(m*0.6931471805599453)
         return val
     else:
-        raise ValueError('Logarithms of negative number is not defined.')
+        raise MathError('Logarithms of negative number is not defined.')
 
 def log(x):
     if x>0:
         return ln(x)/ln(10)
     else:
-        raise ValueError('Logarithms of negative number is not defined.')
+        raise MathError('Logarithms of negative number is not defined.')
 
 def logn(x,base):
     if x>0:
         return ln(x)/ln(base)
     else:
-        raise ValueError('Logarithms of negative number is not defined.')
+        raise MathError('Logarithms of negative number is not defined.')
 
 def antilog(x, base):
     return base**x
@@ -221,13 +227,13 @@ def sin_inv(x):                                         #x is in radians
             val += temp
         return val
     else:
-        raise ValueError('x cannot be outside the range [-1,1].')
+        raise MathError('x cannot be outside the range [-1,1].')
 
 def cos_inv(x):                                         #x is in radians
     if x>=-1 or x<=1:
         return (pi/2) - sin_inv(x)
     else:
-        raise ValueError('x cannot be outside the range [-1,1].')
+        raise MathError('x cannot be outside the range [-1,1].')
 
 def tan_inv(x):                                         #x is in radians
     val = 0
@@ -241,13 +247,13 @@ def cosec_inv(x):                                       #x is in radians
     if x>=1 or x<=-1:
         return sin_inv(1/x)
     else:
-        raise ValueError('x cannot be in the range (-1,1).')
+        raise MathError('x cannot be in the range (-1,1).')
 
 def sec_inv(x):                                         #x is in radians
     if x>=1 or x<=-1:
         return cos_inv(1/x)
     else:
-        raise ValueError('x cannot be in the range (-1,1).')
+        raise MathError('x cannot be in the range (-1,1).')
 
 def cot_inv(x):                                         #x is in radians
     if x>0:
@@ -276,7 +282,7 @@ def cosh_inv(x):                                         #x is in radians
         val = ln(x + temp)
         return val
     else:
-        raise ValueError('Domain of cosh\u207B\u00B9 is [1,∞).')
+        raise MathError('Domain of cosh\u207B\u00B9 is [1,∞).')
 
 def tanh_inv(x):                                         #x is in radians
     if -1<x<1:
@@ -284,7 +290,7 @@ def tanh_inv(x):                                         #x is in radians
         val = (1/2)*ln(temp)
         return val
     else: 
-        raise ValueError('Domain of tanh\u207B\u00B9 is (-1,1).')
+        raise MathError('Domain of tanh\u207B\u00B9 is (-1,1).')
 
 def cosech_inv(x):                                       #x is in radians
     if x!=0:
@@ -292,7 +298,7 @@ def cosech_inv(x):                                       #x is in radians
         val = ln((1/x)+temp)
         return val
     else:
-        raise ValueError('Domain of cosech\u207B\u00B9 is R-{0}.')
+        raise MathError('Domain of cosech\u207B\u00B9 is R-{0}.')
 
 def sech_inv(x):                                         #x is in radians
     if 0 < x <= 1:
@@ -300,7 +306,7 @@ def sech_inv(x):                                         #x is in radians
         val = ln((1/x)+temp)
         return val
     else:
-        raise ValueError('Domain of sech\u207B\u00B9 is (0,1].')
+        raise MathError('Domain of sech\u207B\u00B9 is (0,1].')
 
 def coth_inv(x):                                         #x is in radians
     if x<-1 or x>1:
@@ -308,7 +314,7 @@ def coth_inv(x):                                         #x is in radians
         val = (1/2)*(ln(temp))
         return val
     else:
-        raise ValueError('Domain of coth\u207B\u00B9 is (-∞,-1)u(1,+∞).')
+        raise MathError('Domain of coth\u207B\u00B9 is (-∞,-1)u(1,+∞).')
 
 def radians(x):
     val = pi/180

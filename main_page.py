@@ -74,7 +74,7 @@ def click(value):
                 result = MyMath.ln(eval(val))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Logarithms of negative number or zero is not defined.')
         elif value=="Deg":
             result = MyMath.degrees(eval(val))
@@ -92,14 +92,14 @@ def click(value):
                 result = MyMath.log(eval(val))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Logarithms of negative number or zero is not defined.')
         elif value=="x!":
             try:
                 result = MyMath.factorial(eval(val))
                 entryField.delete(0,END)
                 entryField.insert(0, result)
-            except ValueError:
+            except MyMath.MathError:
                 messagebox.showerror('Math Error','Sorry, factorial does not exist for negative numbers.')
         elif value=="%":
             result = (eval(val))*100
