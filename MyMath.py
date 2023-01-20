@@ -348,3 +348,16 @@ def rep_product(function,lower,upper):
     for i in range(lower+1, upper+1):
         val[0] *= function(i)
     return val[0]
+
+def primefactors(n):
+    temp=[]
+    while n % 2 == 0:
+        temp.append(2)
+        n = n / 2
+    for i in range(3,int(MyMath.sqroot(n)+1),2):
+        while n%i==0:
+            temp.append(i)
+            n = n / i
+    if n > 2:
+        temp.append(n)
+    return temp
