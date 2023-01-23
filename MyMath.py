@@ -361,3 +361,89 @@ def primefactors(n):
     if n > 2:
         temp.append(n)
     return temp
+
+class AP:
+    def __init__(self, a, n, d, b, a_n):
+        self.a=a
+        self.n=n
+        self.d=d
+        self.b=b
+        self.a_n=a_n
+    def sum(a, d, n):
+        return (n/2)*((2*a)+((n-1)*d))
+    def suml(a, n, a_n):
+        return (n/2)*(a+a_n)
+    def nthterm(a, d, n):
+        return a+((n-1)*d)
+    def termsnum(a, a_n, d):
+        return int(((a_n-a)/d)+1)
+    def am(a,b):
+        return (a+b)/2
+
+class GP:
+    def __init__(self, a, n, r, b, a_n):
+        self.a=a
+        self.n=n
+        self.r=r
+        self.b=b
+        self.a_n=a_n
+    def sum(a, r, n):
+        if r != 1 and r<1:
+            return (a*(1-(r**(n))))/(1-r)
+        elif r!=1 and r>1:
+            return (a*((r**(n))-1))/(r-1)
+        elif r==1:
+            return n*a
+    def sum_inf(a,r):
+        return a/(1-r)
+    def suml(a, r, a_n):
+        no = int(ln((a_n/a)-r))
+        return (a*(1-(r**(no))))/(1-r)
+    def nthterm(a, r, n):
+        return a*r**(n-1)
+    def gm(a, b):
+        return (a*b)**0.5
+
+class Series:
+    def __init__(self, n):
+        self.n=n
+    def sum_n(n):
+        if n>0:
+            return (n*(n+1))/2
+    def sum_n2(n):
+        if n>0:
+            return (n*(n+1)*(2*n+1))/2
+    def sum_n3(n):
+        if n>0:
+            return ((n*(n+1))/2)**2
+
+class HP:
+    def __init__(self, a, n, b, d):
+        self.a=a
+        self.n=n
+        self.b=b
+        self.d=d
+    def nthtermh(a,d,n):
+        return 1/(a + (n-1)*d)
+    
+    def sumh(a,d,n):
+        return (1/d)*(ln((2*a)+ (n-1)*d))
+
+    def hm(a,b):
+        return ((2*a*b)/(a + b))
+
+class AGP:
+    def __init__(self, a, n, r, d):
+        self.a=a
+        self.n=n
+        self.r=r
+        self.d=d
+    def nthterm(a,d,r,n):
+        if r == 1:
+            return n/2*((2*a)+((n-1)*d))
+        else:
+            return a/(1-r) + ((d*r)(1-(r(n-1)))/(1-r)) - ((a + ((n-1)*d)*(r*n))/(1-r))
+
+    def sum_inf(a,d,r):
+        return a/(1-r) + ((d*r)/(1-r)**2)
+
