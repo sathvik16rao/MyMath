@@ -263,14 +263,6 @@ def cot_inv(x):                                         #x is in radians
     else:
         return pi/2
 
-def rand():
-    import random
-    return random.random()
-
-def ranint(a,b):
-    import random
-    return random.randint(a,b)
-
 def sinh_inv(x):                                         #x is in radians
     temp = sqroot((x**2)+1)
     val = ln(x + temp)
