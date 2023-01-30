@@ -354,7 +354,7 @@ def primefactors(n):
     while n % 2 == 0:
         temp.append(2)
         n = n / 2
-    for i in range(3,int(MyMath.sqroot(n)+1),2):
+    for i in range(3,int(sqroot(n)+1),2):
         while n%i==0:
             temp.append(i)
             n = n / i
