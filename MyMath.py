@@ -538,3 +538,27 @@ class Constants:
     #Other constants
     kappa = 2.076647442844e-43              #Einstein gravitational constant
     k_e = 8.9875517923e9                    #Coulomb constant
+
+'''Solution for the system of linear equations (any number of unknowns) Ax = b where 
+'a' is the coefficient matrix and 'b' is the constant term matrix.
+Eg: 3x+2y=9 and 4x-8y=0 -> a=[[3,2],[4,-8]], b=[9,0]'''
+
+def eq_solve(a, b):
+    n = len(b)
+    for i in range(n):
+        temp = i
+        for j in range(i + 1, n):
+            if abs(a[j][i]) > abs(a[temp][i]):
+                temp = j
+        a[i], a[temp] = a[temp], a[i]
+        b[i], b[temp] = b[temp], b[i]
+        for j in range(i + 1, n):
+            m = a[j][i] / a[i][i]
+            for k in range(i + 1, n):
+                a[j][k] -= m * a[i][k]
+            b[j] -= m * b[i]
+    val = [0.0 for i in range(n)]
+    for i in range(n - 1, -1, -1):
+        s = sum(a[i][j] * val[j] for j in range(i, n))
+        val[i] = (b[i] - s) / a[i][i]
+    return val
